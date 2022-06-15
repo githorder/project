@@ -5,7 +5,7 @@ export default function TagCloud() {
     <>
       <Box pad={{ vertical: 'medium' }}>
         <Box pad={{ vertical: 'medium' }}>
-          <Text color="brand" size="large" textAlign="center">
+          <Text color="dark-1" size="large" textAlign="center">
             Tag Cloud
           </Text>
         </Box>

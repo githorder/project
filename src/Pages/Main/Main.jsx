@@ -9,8 +9,8 @@ export default function Main() {
     <>
       <Navigation />
       <Hero />
-      <LargestCollection />
       <RecentCollection />
+      <LargestCollection />
       <TagCloud />
     </>
   );

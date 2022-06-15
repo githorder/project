@@ -1,7 +1,5 @@
 import { Box, Heading } from 'grommet';
 
-import bg from './bg.png';
-
 export default function Hero() {
   return (
     <Box
@@ -9,19 +7,19 @@ export default function Hero() {
       responsive
       justify="center"
       height="small"
-      background={{
-        image: `url(${bg})`,
-      }}
+      background="brand"
     >
-      <Heading
-        alignSelf="center"
-        color="#fff"
-        margin="none"
-        responsive
-        weight="300"
-      >
-        Search Collections!
-      </Heading>
+      <Box animation="slideLeft">
+        <Heading
+          alignSelf="center"
+          color="light-5"
+          margin="none"
+          responsive
+          weight="300"
+        >
+          Search Collections!
+        </Heading>
+      </Box>
     </Box>
   );
 }
