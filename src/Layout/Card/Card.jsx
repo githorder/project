@@ -5,6 +5,7 @@ import {
   CardHeader,
   ResponsiveContext,
 } from 'grommet';
+import { Cubes } from 'grommet-icons';
 import React from 'react';
 
 export default function CustomCard({ basis, height }) {
@@ -15,11 +16,15 @@ export default function CustomCard({ basis, height }) {
       margin={{ horizontal: 'small' }}
       height={height}
       basis={size === 'small' ? 'small' : basis}
-      background="brand"
+      background="#fff"
+      pad="medium"
+      align="center"
     >
-      <CardHeader></CardHeader>
-      <CardBody></CardBody>
-      <CardFooter></CardFooter>
+      <CardHeader justify="center">
+        <Cubes size="xlarge" color="brand" />
+      </CardHeader>
+      <CardBody>Body</CardBody>
+      <CardFooter>Footer</CardFooter>
     </Card>
   );
 }
