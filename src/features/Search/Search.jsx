@@ -10,7 +10,9 @@ export default class Search extends Component {
   componentDidMount() {
     (async () => {
       try {
-        const response = await fetch('http://localhost:8000/topics');
+        const response = await fetch(
+          'https://project-diyor-api.herokuapp.com/topics'
+        );
         const options = await response.json();
         const topics = options.map((option) => option.topic);
         this.setState({ options: topics });
