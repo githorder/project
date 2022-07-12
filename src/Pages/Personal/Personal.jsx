@@ -85,8 +85,8 @@ function Personal({
     (async () => {
       try {
         const [optionsRes, collectionsRes] = await Promise.all([
-          fetch('http://localhost:8000/topics'),
-          fetch(`http://localhost:8000/collections/${id}`),
+          fetch('https://project-diyor-api.herokuapp.com/topics'),
+          fetch(`https://project-diyor-api.herokuapp.com/${id}`),
         ]);
         const options = await optionsRes.json();
         const collections = await collectionsRes.json();
