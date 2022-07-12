@@ -41,7 +41,6 @@ const mapDispatchToProps = (dispatch) => ({
   onChangeHandlerPassword: (e) => dispatch(writePassword(e.target.value)),
   onSubmitHandler: (userData) => {
     dispatch(login(userData));
-    dispatch(pageChange('personal'));
   },
 });
 
