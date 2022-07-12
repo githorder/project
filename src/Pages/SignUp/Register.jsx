@@ -13,7 +13,6 @@ import {
 import { deepMerge } from 'grommet/utils';
 
 import { writeName, writeEmail, writePassword, submit } from './actions';
-import { pageChange } from '../../actions';
 
 const customTheme = deepMerge(grommet, {
   formField: {
@@ -44,7 +43,6 @@ const mapDispatchToProps = (dispatch) => ({
   onChangeHandlerPassword: (e) => dispatch(writePassword(e.target.value)),
   onSubmitHandler: (userData) => {
     dispatch(submit(userData));
-    dispatch(pageChange('personal'));
   },
 });
 

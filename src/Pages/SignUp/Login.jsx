@@ -12,7 +12,6 @@ import {
 import { deepMerge } from 'grommet/utils';
 
 import { writeEmail, writePassword, login } from './actions';
-import { pageChange } from '../../actions';
 
 const customTheme = deepMerge(grommet, {
   formField: {
