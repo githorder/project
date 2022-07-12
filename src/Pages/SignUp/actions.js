@@ -17,6 +17,7 @@ export const submit = (userData) => async (dispatch) => {
       }
     );
     const user = await response.json();
+    if (typeof user === 'string') throw new Error();
     dispatch({ type: 'IS_SUBMITED', payload: user });
   } catch (err) {
     dispatch({ type: 'IS_NOT_SUBMITED', payload: err.message });
@@ -35,6 +36,7 @@ export const login = (userData) => async (dispatch) => {
       }
     );
     const user = await response.json();
+    if (typeof user === 'string') throw new Error();
     dispatch({ type: 'IS_SUBMITED', payload: user });
   } catch (err) {
     dispatch({ type: 'IS_NOT_SUBMITED', payload: err.message });
