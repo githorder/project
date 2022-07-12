@@ -8,11 +8,14 @@ export const writePassword = (password) => ({
 export const submit = (userData) => async (dispatch) => {
   try {
     dispatch({ type: 'IS_SUBMITING' });
-    const response = await fetch('http://localhost:8000/register', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userData),
-    });
+    const response = await fetch(
+      'https://project-diyor-api.herokuapp.com/register',
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData),
+      }
+    );
     const user = await response.json();
     dispatch({ type: 'IS_SUBMITED', payload: user });
   } catch (err) {
@@ -23,11 +26,14 @@ export const submit = (userData) => async (dispatch) => {
 export const login = (userData) => async (dispatch) => {
   try {
     dispatch({ type: 'IS_SUBMITING' });
-    const response = await fetch('http://localhost:8000/login', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userData),
-    });
+    const response = await fetch(
+      'https://project-diyor-api.herokuapp.com/login',
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData),
+      }
+    );
     const user = await response.json();
     dispatch({ type: 'IS_SUBMITED', payload: user });
   } catch (err) {

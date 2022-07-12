@@ -21,16 +21,19 @@ export const addCollection =
   async (dispatch) => {
     try {
       dispatch({ type: 'IS_ADDING_COLLECTION' });
-      const response = await fetch(`http://localhost:8000/collections/${id}`, {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          collectionname: name,
-          description,
-          topic,
-        }),
-      });
+      const response = await fetch(
+        `https://project-diyor-api.herokuapp.com/collections/${id}`,
+        {
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            collectionname: name,
+            description,
+            topic,
+          }),
+        }
+      );
       const collections = await response.json();
       dispatch({ type: 'IS_ADDED_COLLECTION', payload: collections });
     } catch (err) {
